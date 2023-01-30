@@ -1,0 +1,57 @@
+
+<!-- saved from url=(0074)https://cdn-bacon.getcarro.com/deviceStorage.html?https://nacrewatches.com -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><link rel="icon" href="data:,"><script>var log;
+      var fault;
+
+      try {
+        log = localStorage.getItem('carroLogging') === 'true';
+      } catch (err) {
+        fault = true;
+      }
+      function messageHandler(e) {
+        if (fault) {
+          return;
+        }
+
+        var data;
+
+        try {
+          data = JSON.parse(e.data);
+        } catch (ex) {
+          return;
+        }
+        if (log) {
+          console.log('messageHandler received', data);
+        }
+        if (data && data.uid) {
+          switch(data.action) {
+            case 'getItem':
+              break;
+
+            case 'setItem':
+              localStorage.setItem(data.key, data.value);
+              break;
+
+            case 'removeItem':
+              localStorage.removeItem(data.key);
+              break;
+
+            default:
+              data.error = 'Undefined action';
+          }
+
+          if (data.key) {
+            data.value = localStorage.getItem(data.key);
+          }
+
+          if (log) {
+            console.log('messageHandler posting', data);
+          }
+
+          e.source.postMessage(JSON.stringify(data), e.origin);
+        }
+      }
+
+      window.addEventListener('message', messageHandler, false);
+
+      window.parent.postMessage('deviceStorageReady', '*');</script></head><body data-new-gr-c-s-check-loaded="14.1038.0" data-gr-ext-installed=""></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

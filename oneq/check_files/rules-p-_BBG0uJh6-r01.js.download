@@ -1,0 +1,8 @@
+/*
+ Quantcast measurement tag
+ Copyright (c) 2008-2017, Quantcast Corp.
+*/
+(function(a,g,f){try{__qc("defaults",a,{labels:"_fp.event.Default"})}catch(m){}var k=function(e,d,a){return e?"nc"===e?!d||!a||0>d.indexOf(a):"eq"===e?d===a:"sw"===e?0===d.indexOf(a):"ew"===e?(e=d.length-a.length,d=d.lastIndexOf(a,e),-1!==d&&d===e):"c"===e?0<=d.indexOf(a):!1:!1},l=function(e){var a=f.createElement("a");a.href=e;return a},b=function(a,d,c){var b;b=g.top===g.self?f.location.href:l(f.referrer).href;k(d,b,c)?a(b):a(!1)},c=function(a){return"array"==={}.toString.call(a).match(/\s([a-zA-Z]+)/)[1].toLowerCase()?
+{labels:a.join(",")}:{labels:""+a}};__qc("rules",[a,null,[[c,"_fp.event.Homepage"]],[[function(a,b,c){var h;h=g.top===g.self?f.location.pathname:l(f.referrer).pathname;k(b,h,c)?a(h):a(!1)},"eq","/"]]],[a,null,[[c,"_fp.event.15 Inch Tote"]],[[b,"c","dagnedover.com/products/15-inch"]]],[a,null,[[c,"_fp.event.13 Inch Tote"]],[[b,"c","dagnedover.com/products/13-inch"]]],[a,null,[[c,"_fp.event.Mini Tote"]],[[b,"c","dagnedover.com/products/mini-tote"]]],[a,null,[[c,"_fp.event.Tiny Tote"]],[[b,"c","dagnedover.com/products/tiny-tote"]]],
+[a,null,[[c,"_fp.event.Card Case"]],[[b,"c","dagnedover.com/products/card-case"]]],[a,null,[[c,"_fp.event.Shop All"]],[[b,"c","dagnedover.com/collections/all"]]],[a,null,[[c,"_fp.event.Coming Soon"]],[[b,"c","dagnedover.com/pages/coming-soon"]]],[a,null,[[c,"_fp.event.Holiday Gift Guide"]],[[b,"c","dagnedover.com/pages/holiday-gift-guide"]]],[a,null,[[c,"_fp.event.Find Yours"]],[[b,"c","dagnedover.com/collections/filter"]]],[a,null,[[c,"_fp.event.Shopping Cart"]],[[b,"eq","http://www.dagnedover.com/cart"]]])})("p-_BBG0uJh6-r01",
+window,document);

@@ -1,0 +1,470 @@
+/* Marketing Rules version: 1969 */
+//Rule: MOB_bDeviceDetailsPage_RT
+//ATTUID: ml916s
+//Version: 1.0 12/19/2019
+
+var customerType = ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "";
+var flowCode = ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "";
+var language = ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '';
+var liabilityType = ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : '';
+
+if (ddo.getVar("page.pageInfo.friendlyPageName").toUpperCase().indexOf("MODAL") === -1 && ddo.getVar("page.pageInfo.friendlyPageName").toUpperCase().indexOf("CONFIG") === -1) {
+	var uuid = ddo.getVar("user.uuid");
+	var sku = ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : "";
+	var customerType = ddo.getVar("user.customerType");
+	if (customerType === 'SMB') {
+		gtag('event', 'conversion', {
+			'allow_custom_scripts': true,
+			'u1': window.location.href,
+			'u3': sku,
+			'u20': uuid.replace("=", ""),
+			'u30': visitor.getMarketingCloudVisitorID(),
+			'send_to': 'DC-6143919/crur/cru_b00t+unique'
+		});
+
+		fbq('init', '561815144351253');
+		fbq.disablePushState = true;
+		fbq('trackSingle', '561815144351253', 'ViewContent', {
+			loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+			customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+			flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+			language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+			liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+			friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+			contents: [{
+				"id": ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : "",
+				"name": ddo.getVar("page.attributes.skuName") ? ddo.getVar("page.attributes.skuName") : "",
+				"value": ddo.getVar("page.attributes.itemRecurringPrice") ? ddo.getVar("page.attributes.itemRecurringPrice") : "",
+				"category": "device",
+			}],
+			content_type: 'product',
+		});
+
+		pixie('event', 'ItemView', {
+			loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+			customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+			flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+			language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+			liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+			friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+			items: [{
+				"id": ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : "",
+				"name": ddo.getVar("page.attributes.skuName") ? ddo.getVar("page.attributes.skuName") : "",
+				"value": ddo.getVar("page.attributes.itemRecurringPrice") ? ddo.getVar("page.attributes.itemRecurringPrice") : "",
+				"category": "device",
+			}],
+			item_type: 'ABS',
+		});
+	} else {
+		gtag('event', 'conversion', {
+			'allow_custom_scripts': true,
+			'u1': sku,
+			'u19': window.location.href,
+			'u20': uuid.replace("=", ""),
+			'u30': visitor.getMarketingCloudVisitorID(),
+			'send_to': 'DC-6100125/mobil00/mob_b00h+unique'
+		});
+
+		fbq('init', '263973384029222');
+		fbq.disablePushState = true;
+		fbq('trackSingle', '263973384029222', 'PageView', {
+			loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+			customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+			flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+			language: ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+			liabilitytype: ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+			friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+		});
+		fbq('trackSingle', '263973384029222', 'ViewContent', {
+			loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+			customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+			flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+			language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+			liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+			friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+			contents: [{
+				"id": ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : "",
+				"name": ddo.getVar("page.attributes.skuName") ? ddo.getVar("page.attributes.skuName") : "",
+				"value": ddo.getVar("page.attributes.itemRecurringPrice") ? ddo.getVar("page.attributes.itemRecurringPrice") : "",
+				"category": "device",
+			}],
+			content_type: 'product',
+		});
+
+		//97th Floor
+		fbq('init', '321054629174631');
+		fbq.disablePushState = true;
+		fbq('trackSingle', '321054629174631', 'ViewContent', {
+			loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+			customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+			flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+			language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+			liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+			friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+			contents: [{
+				"id": ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : "",
+				"name": ddo.getVar("page.attributes.skuName") ? ddo.getVar("page.attributes.skuName") : "",
+				"value": ddo.getVar("page.attributes.itemRecurringPrice") ? ddo.getVar("page.attributes.itemRecurringPrice") : "",
+				"category": "device",
+			}],
+			content_type: 'product',
+		});
+
+		pixie('event', 'ItemView', {
+			loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+			customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+			flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+			language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+			liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+			friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+			items: [{
+				"id": ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : "",
+				"name": ddo.getVar("page.attributes.skuName") ? ddo.getVar("page.attributes.skuName") : "",
+				"value": ddo.getVar("page.attributes.itemRecurringPrice") ? ddo.getVar("page.attributes.itemRecurringPrice") : "",
+				"category": "device",
+			}],
+			item_type: 'Mobility',
+		});
+	}
+}
+
+gtag('event', 'view_item', {
+	"items": [{
+		"id": ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : undefined,
+		"name": ddo.getVar("page.attributes.skuName") ? ddo.getVar("page.attributes.skuName") : undefined,
+		"price": ddo.getVar("page.attributes.itemRecurringPrice") ? ddo.getVar("page.attributes.itemRecurringPrice") : undefined,
+		"onetimeprice": ddo.getVar("page.attributes.oneTimePrice") ? ddo.getVar("page.attributes.oneTimePrice") : undefined,
+		"recurringprice": ddo.getVar("page.attributes.itemRecurringPrice") ? ddo.getVar("page.attributes.itemRecurringPrice") : undefined,
+		"fullprice": ddo.getVar("page.attributes.listPrice") ? ddo.getVar("page.attributes.listPrice") : undefined,
+		"category": "DEVICE",
+	}],
+	'loggedIn': loggedIn === 1 ? 'Logged In' : "(not set)",
+	'customerType': ddo.getVar("user.customerType"),
+	'flowCode': ddo.getVar("page.pageInfo.flowCode"),
+	'language': ddo.getVar("page.pageInfo.language"),
+	'liabilityType': ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+	'friendlypagename': ddo.getVar("page.pageInfo.friendlyPageName"),
+});
+
+window.uetq = window.uetq || [];
+window.uetq.push('event', 'ItemView', {
+	page_path: window.location.pathname,
+	ecomm_pagetype: "product",
+	ecomm_prodid: ddo && ddo.getVar("page.attributes.sku") ? ddo.getVar("page.attributes.sku") : ""
+});
+
+var mobilityBuyFlow;
+if (mobilityBuyFlow === undefined) {
+	if ("undefined" === typeof DeviceDetailmarketingANF) {
+		var marketingCustomEvent = "Mobility BuyFlow Listener";
+		var DeviceDetailmarketingANF = AnalyticsNotificationFramework.create(ddo);
+		ddo.registerForEvents(DeviceDetailmarketingANF, marketingCustomEvent, ["pageLoad", "formResponse", "systemEvent"], undefined, ["user.uuid", "_evtAddressBarFullURL", "_evtFriendlyPageName", "page.attributes.sku", "eventAction", "eventCode", "linkName", "items", "_evtQuerystring", "_evtPageURL", "_evtPageName", "_evtFlowCode", "successFlag"]);
+		window.addEventListener(marketingCustomEvent, function (e) {
+			flowCode = ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "";
+			var mktPageName = e.detail.data["_evtFriendlyPageName"] ? e.detail.data["_evtFriendlyPageName"] : "";
+			var mktevtPageName = e.detail.data["_evtPageName"] ? e.detail.data["_evtPageName"] : "";
+			var mktEventCode = e.detail.data["eventCode"];
+			var mktLinkName = e.detail.data["linkName"];
+			var pageUrl = e.detail.data["_evtPageURL"];
+			var uuid = e.detail.data["user.uuid"];
+			var items = e.detail.data["items"];
+			var url = e.detail.data["_evtAddressBarFullURL"];
+			var successFlag = e.detail.data["successFlag"] ? e.detail.data["successFlag"] : "";
+
+			if (url.indexOf("?") > -1) {
+				safeUrl = url.substring(0, window.location.href.indexOf("?")).replace("#", "hash");
+			} else {
+				safeUrl = url.replace("#", "hash");
+			}
+
+			//ADDTOCART EVENTS
+			if ((mktEventCode === "DS_Add_To_Cart_Submit" || mktEventCode === "DS_Cart_Update_Submit") && (successFlag === "1" || successFlag === 1)) {
+				console.log("ANF: Add To Cart Fired")
+				var items = e.detail.data["items"];
+				var flags = {
+					hbomax: "",
+					insurance: "",
+					device: "",
+					plan: "",
+					prepaidPlan: "",
+					accessory: "",
+				};
+				var singleItem = [];
+				var fbItems = [];
+				var xandrItems = [];
+				for (var z = 0; z < items.length; z++) {
+					var id = items[z].itemSku ? items[z].itemSku : "";
+					var name = items[z].itemName ? items[z].itemName : '';
+					var category = items[z].itemCategory ? items[z].itemCategory : '';
+					var quantity = items[z].itemQty ? items[z].itemQty : '';
+					var onetimeprice = items[z].itemOneTimePrice ? items[z].itemOneTimePrice : '';
+					var recurringprice = items[z].itemRecurringPrice ? items[z].itemRecurringPrice : '';
+					var downpaymentamount = items[z].itemDownPaymentAmt ? items[z].itemDownPaymentAmt : '';
+					var fullprice = items[z].itemFullPrice ? items[z].itemFullPrice : '';
+					singleItem.push({
+						id: id,
+						name: name,
+						onetimeprice: onetimeprice,
+						recurringprice: recurringprice,
+						downpaymentamount: downpaymentamount,
+						fullpricefullprice: fullprice,
+						category: category,
+						quantity: quantity,
+					});
+
+					if (category.toUpperCase() !== "SHAREDATAGROUP" && category.toUpperCase() !== "SHAREDDATAFEATURE" && category.toUpperCase() !== "SHAREDDATAGROUP") {
+						fbItems.push({
+							id: id,
+							name: name,
+							value: recurringprice,
+							category: category,
+							quantity: quantity,
+						});
+
+						xandrItems.push({
+							id: id,
+							name: name,
+							value: recurringprice,
+							category: category,
+							quantity: quantity,
+						});
+					}
+
+					if (name.toUpperCase() === "UNLIMITED ELITE") {
+						flags.hbomax = 1;
+					}
+					if (name.toUpperCase().indexOf("INSURANCE") > -1 || name.toUpperCase().indexOf("PROTECT ADVANTAGE") > -1) {
+						flags.insurance = 1;
+					}
+					if (category.toUpperCase() === "DEVICE" || category.toUpperCase() === "PHONES") {
+						flags.device = 1;
+					}
+					if (category.toUpperCase() === "SHAREDATAGROUP") {
+						flags.plan = 1;
+					}
+					if (category.toUpperCase() === "VOICEPLAN") {
+						flags.prepaidPlan = 1;
+					}
+					if (category.toUpperCase() === "ACCESSORY") {
+						flags.accessory = 1;
+					}
+				}
+
+				gtag('event', 'add_to_cart', {
+					"items": singleItem,
+					'loggedIn': loggedIn === 1 ? 'Logged In' : "(not set)",
+					'customerType': ddo.getVar("user.customerType"),
+					'flowCode': flowCode,
+					'language': language,
+					'liabilitytype': liabilityType,
+					'pagename': mktevtPageName ? mktevtPageName : "",
+					'friendlypagename': mktPageName ? mktPageName : ""
+				});
+
+				if (customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) {
+					fbq('trackSingle', '263973384029222', 'AddToCart', {
+						loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+						customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+						flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+						language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+						liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+						friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+						contents: fbItems,
+						content_type: 'product',
+					});
+
+					//97th Floor
+					fbq('trackSingle', '321054629174631', 'AddToCart', {
+						loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+						customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+						flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+						language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+						liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+						friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+						contents: fbItems,
+						content_type: 'product',
+					});
+
+					pixie('event', 'AddToCart', {
+						loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+						customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+						flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+						language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+						liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+						friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+						items: xandrItems,
+						item_type: 'Mobility',
+					});
+				} else if (customerType.indexOf("SMB") > -1 || customerType.indexOf("CRU") > -1) {
+					fbq('trackSingle', '561815144351253', 'AddToCart', {
+						loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+						customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+						flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+						language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+						liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+						friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+						contents: fbItems,
+						content_type: 'product',
+					});
+
+					pixie('event', 'AddToCart', {
+						loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+						customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+						flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+						language: ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+						liabilitytype: ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+						friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+						items: xandrItems,
+						item_type: 'ABS',
+					});
+				}
+
+				//HBO MAX FLAG
+				if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flags.hbomax === 1) {
+					console.log("ANF: HBO Max Consumer flag fired");
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6100125/mobil00/mob_h0+unique'
+					});
+				}
+
+				//INSURANCE
+				if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flags.insurance === 1) {
+					console.log("ANF: Insurance Consumer Tracking fired");
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6100125/homes00/mob_b001+unique'
+					});
+
+					gtag('event', 'conversion', {
+						'send_to': 'AW-602056930/Rh4WCILV_uABEOLRip8C'
+					});
+				}
+
+				//DEVICE CONFIG
+				if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flowCode !== "DSPREPAID" && flags.device === 1) {
+					console.log("ANF: Device Config POSPAID/AAL/UPGRADE fired");
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u1': sku,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6100125/mobil00/mob_b00v+unique'
+					});
+
+					gtag('event', 'conversion', {
+						'send_to': 'AW-1049001539/MkU5CKX_7KYBEMP8mfQD'
+					});
+
+					window.uetq = window.uetq || [];
+					window.uetq.push({
+						'ec': 'myATT',
+						'ea': 'MOB_bDeviceConfigurator_RT',
+						'el': 'MOB_bDeviceConfigurator_RT',
+						'ev': '1'
+					});
+
+					gtag('event', 'conversion', {
+						'send_to': 'AW-602056930/Rh4WCILV_uABEOLRip8C'
+					});
+				} else if ((customerType.indexOf("SMB") > -1 || customerType.indexOf("CRU") > -1) && flowCode !== "DSPREPAID" && flags.device === 1) {
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u1': sku,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6143919/crur/cru_b00u+unique'
+					});
+				}
+
+				//DEVICE CONFIG (PREPAID)
+				if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flowCode === "DSPREPAID" && flags.device === 1) {
+					console.log("ANF: Device Config Prepaid fired");
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6100125/mobil00/mob_b01+unique'
+					});
+
+					gtag('event', 'conversion', {
+						'send_to': 'AW-602056930/Rh4WCILV_uABEOLRip8C'
+					});
+
+					var ns = new Image(1, 1);
+					ns.src = "https://aa.agkn.com/adscores/g.pixel?sid=9202275658&page=" + window.location.href + "&cv1=P"
+				}
+
+				//PLAN CONFIG
+				if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flowCode !== "DSPREPAID" && flags.plan === 1) {
+					console.log("ANF: MOB_bPlanConfigurator_RT fired");
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6100125/mobil00/o41p-0+unique'
+					});
+
+					gtag('event', 'conversion', {
+						'send_to': 'AW-602056930/Rh4WCILV_uABEOLRip8C'
+					});
+				} else if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flowCode !== "DSPREPAID" && flags.plan === 1) {
+					console.log("ANF: CRU_bPlanConfiguration_RT fired")
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u1': sku,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6143919/crur/cru_b00v+unique'
+					});
+				}
+
+				//PLAN CONFIG (PREPAID)
+				if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flowCode === "DSPREPAID" && flags.prepaidPlan === 1) {
+					console.log("ANF: MOB_bPrepaidDeviceConfig_RT fired");
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6100125/mobil00/mob_b01+unique'
+					});
+
+					gtag('event', 'conversion', {
+						'send_to': 'AW-602056930/Rh4WCILV_uABEOLRip8C'
+					});
+				}
+
+				//ACCESSORY CONFIG
+				if ((customerType.indexOf("CONS") > -1 || customerType.indexOf("IRU") > -1) && flags.accessory === 1) {
+					console.log("ANF: MOB_bAccessoryConfig_RT fired");
+					gtag('event', 'conversion', {
+						'allow_custom_scripts': true,
+						'u5': sku,
+						'u19': safeUrl,
+						'u20': uuid,
+						'u30': visitor.getMarketingCloudVisitorID(),
+						'send_to': 'DC-6100125/mobil00/mob_b02x+unique'
+					});
+
+					gtag('event', 'conversion', {
+						'send_to': 'AW-602056930/Rh4WCILV_uABEOLRip8C'
+					});
+				}
+			}
+		});
+		DeviceDetailmarketingANF.listen();
+	}
+	mobilityBuyFlow = "1";
+}

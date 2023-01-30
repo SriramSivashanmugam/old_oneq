@@ -1,0 +1,12 @@
+/* Marketing Rules version: 1841 */
+//Rule: Whisbi_Consumer_Nuance
+//ATTUID: ml916s
+
+if (typeof Whisbi_Consumer_Nuance === "undefined") {
+    if (sessionStorage.getItem("nuanceWhisbiTest") === "true") {
+        var whisbi = document.createElement('script');
+        whisbi.src = "//static.whisbi.com/de39cff4-bdc2-484d-a835-0e179000cc2d/connect.js?origin=nuance&mode=chatbot&lang=EN";
+        document.getElementsByTagName('body')[0].appendChild(whisbi);
+    } 
+    var Whisbi_Consumer_Nuance = 1;
+}

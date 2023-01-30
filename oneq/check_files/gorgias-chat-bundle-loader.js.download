@@ -1,0 +1,13 @@
+
+!function() {
+    var appId = 6191;
+    var script = document.createElement('script')
+    script.src = 'https://config.gorgias.chat/gorgias-chat-bundle.js?rev=0bbeebbb&applicationId=' + appId
+    script.id = 'gorgias-chat-bundle'
+    document.body.appendChild(script)
+    window.gorgiasChat = {}
+    var initialisation = new Promise(function(resolve, reject) {
+        window.gorgiasChat.resolve = resolve
+    })
+    window.gorgiasChat.init = function() { return initialisation; }
+}();

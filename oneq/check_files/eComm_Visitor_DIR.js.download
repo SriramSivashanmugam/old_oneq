@@ -1,0 +1,304 @@
+/* Marketing Rules version: 2210 */
+//Rule: eComm_Visitor_DIR
+//ATTUID: mk667s
+//Version: 1.0 12/23/2019
+
+var pageInfo = JSON.parse(sessionStorage.getItem("mktPage")) !== null ? JSON.parse(sessionStorage.getItem("mktPage")) : "";
+var pageFlowCode = ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "";
+var pageLanguage = ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : "";
+var pagePageName = ddo && ddo.getVar("page.pageInfo.pageName") ? ddo.getVar("page.pageInfo.pageName") : "";
+var pageFriendlyPageName = ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "";
+var pageLiabilityType = ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "";
+var pageCustomerType = ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "";
+var accountInFocusUserType = ddo && ddo.getVar("user.account.accountInFocusUserType") ? ddo.getVar("user.account.accountInFocusUserType") : "";
+var userType = ddo && ddo.getVar("user.login.userType") ? ddo.getVar("user.login.userType") : "";
+var flowCode = ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : ""
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=START comScore-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+if (window.location.href.indexOf("directv.com") > -1) {
+	var comScore = new Image(1, 1);
+	comScore.src = "https://sb.scorecardresearch.com/p?c1=2&c2=14617392&cv=2.0&cj=1";
+}
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=END comScore-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=START DCM-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//ECAP-20665 Included new domains
+if ((window.location.host === "www.att.com") || (window.location.host === "watch.att.com") || (window.location.href.indexOf("atttv.com") > -1) || (window.location.host === "app.mobilemyaccount") || (window.location.host === "m.att.com") || (window.location.host === "www.directv.com") || (window.location.host === "ufix.att.com") || (window.location.host === "www.paygonline.com") || (window.location.host === "app.smarthelp") || (window.location.host === "app.mobilethanks") || (window.location.host === "troubleshoot.att.com") || (window.location.host === "www.atttvnow.com") || (window.location.host === "forums.att.com") || (window.location.host === "support.directv.com") || (window.location.host === "m.directv.com") || (window.location.host === "uversecentral3.att.com") || (window.location.host === "insider.directv.com") || (window.location.host === "entertainment.directv.com") || (window.location.host === "mobile.directv.com") || (window.location.host === "www.directvnow.com") || (window.location.host === "speedtest.att.com") || (window.location.host === "tchosted.atttvnow.com") || (window.location.host === "directvnow.com") || (window.location.host === "www.atttvnow.com") || (window.location.host === "help.directvnow.com") || (window.location.host === "myattwg.att.com")) {
+	if (window.location.href.indexOf("?") > -1) {
+		var url = window.location.href.substring(0, window.location.href.indexOf("?")).replace("#", "hash");
+	} else {
+		var url = window.location.href.replace("#", "hash");
+	}
+	gtag('event', 'conversion', {
+		'allow_custom_scripts': true,
+		'u19': window.location.href.indexOf("?") > -1 ? window.location.href.replace("#", "").substr(0, window.location.href.indexOf("?") - 1) : window.location.href.replace("#", ""),
+		'u20': ddo.getVar("user.uuid").replace("=", ""),
+		'u30': visitor.getMarketingCloudVisitorID(),
+		'u70': ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : undefined,
+		'u75': ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : '',			
+		'send_to': 'DC-6100125/ecomm0/ecomm0+unique'
+	});
+
+	//VAC - Owner (cv207h)
+	gtag('event', 'conversion', {
+		'send_to': 'AW-1049001539/JsbSCKHm2_0BEMP8mfQD',
+		'loggedIn': loggedIn === 1 ? 'Logged In' : "(not set)",
+		'customerType': ddo.getVar("user.customerType"),
+		'pageType-hit': ddo.getVar("page.category.pageFunction"),
+		'pageType-session': ddo.getVar("page.category.pageFunction"),
+		'flowCode': ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : '',
+		'language': ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+		'liabilitytype': ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+		'customerproducts': ddo.getVar("user.account.productSegment") ? ddo.getVar("user.account.productSegment") : undefined,
+		'productsincart': ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : undefined,
+		'friendlypagename': ddo.getVar("page.pageInfo.friendlyPageName"),
+	})
+}
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=END DCM-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=START NUESTAR-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+window.setTimeout(function () {
+	var aelmnt = new Image(1, 1);
+	aelmnt.src = "//d.agkn.com/pixel/8597/?che=" + Math.random() + "&omid=" + visitor.getMarketingCloudVisitorID();
+}, 1000);
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=END NUESTAR-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=START GA360-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+if ((window.location.href.indexOf("att.com") > -1) || (window.location.href.indexOf("atttv.com") > -1) || (window.location.href.indexOf("directv.com") > -1) || (window.location.href.indexOf("atttvnow.com") > -1) || (window.location.href.indexOf("attwatchtv.com") > -1) || (window.location.href.indexOf("attonlineoffers.com") > -1) || (window.location.href.indexOf("attwatchtv.com") > -1)) {
+	gtag('event', 'page_view', {
+		'loggedIn': loggedIn === 1 ? 'Logged In' : "(not set)",
+		'customerType': ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+		'pageType-hit': ddo && ddo.getVar("page.category.pageFunction") ? ddo.getVar("page.category.pageFunction") : "",
+		'pageType-session': ddo && ddo.getVar("page.category.pageFunction") ? ddo.getVar("page.category.pageFunction") : "",
+		'flowCode': ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : '',
+		'language': ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+		'liabilitytype': ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+		'customerproducts': ddo && ddo.getVar("user.account.productSegment") ? ddo.getVar("user.account.productSegment") : undefined,
+		'productsincart': ddo && ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : undefined,
+		'friendlypagename': ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+	});
+	ga_pageLoadCount++;
+}
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=END GA360-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//Bing
+
+var customerType = ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "";
+var flowCode = ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "";
+var language = ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '';
+var liabilitytype = ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "";
+var friendlypagename = ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "";
+
+window.uetq = window.uetq || [];
+window.uetq.push({
+	'ec': flowCode + "-" + customerType + "-" + liabilitytype + "-" + language,
+	'ea': 'page_view',
+	'el': friendlypagename,
+});
+
+fbq('dataProcessingOptions', ['LDU'], 0, 0);
+fbq('set', 'autoConfig', false, '540677943544643');
+fbq('set', 'autoConfig', false, '128900881029137');
+fbq('set', 'autoConfig', false, '445027768997864');
+fbq('set', 'autoConfig', false, '263973384029222');
+fbq('set', 'autoConfig', false, '471628093408318');
+fbq('set', 'autoConfig', false, '427667220899227');
+fbq('set', 'autoConfig', false, '561815144351253');
+fbq('set', 'autoConfig', false, '2126365844106075');
+fbq('set', 'autoConfig', false, '420187331745290');
+fbq('set', 'autoConfig', false, '321054629174631');
+
+if (window.location.pathname === "/international-tv/" ||
+	window.location.pathname === "/hsc/fiber/" ||
+	window.location.pathname === "/hsc/atttv-hbo-max/" ||
+	window.location.pathname === "/hsc/atttv-internet-bundle/" ||
+	window.location.pathname.indexOf("/buy/bundles/") > -1 ||
+	window.location.pathname === "/buy/bundles" ||
+	window.location.pathname === "/buy/cart/" ||
+	window.location.pathname === "/buy/thankyou" ||
+	window.location.pathname === "/buy/thankyou/" ||
+	window.location.pathname === "/buy/thankyou/skipMRKT/" ||
+	window.location.pathname === "/buy/thankyou/skipMRKT") {
+	pixie('init', 'b21668ff-3ca1-478f-8d1d-627b6f2b3dfc');
+
+	fbq('init', '540677943544643');
+	fbq('trackSingle', '540677943544643', 'PageView');
+}
+
+//97th Floor
+if (window.location.href.indexOf("/offers/discount-program/") > -1 ||
+	window.location.href.indexOf("/poeportal/selfassessment/teacher") > -1 ||
+	window.location.pathname === "/signatureprog/" ||
+	window.location.href.indexOf("/buy/phones") > -1 ||
+	window.location.href.indexOf("/buy/wireless/") > -1 ||
+	window.location.href.indexOf("/buy/cart/") > -1 ||
+	window.location.href.indexOf("/buy/checkout/") > -1 ||
+	window.location.href.indexOf("/buy/thankyou") > -1 ||
+	window.location.href.indexOf("/deals/cell-phone-deals/") > -1 ||
+	window.location.href.indexOf("/offers/network/") > -1 ||
+	window.location.href.indexOf("/plans/wireless/") > -1 ||
+	window.location.href.indexOf("/plans/unlimited-data-plans/") > -1 ||
+	window.location.href.indexOf("/maps/wireless-coverage.html") > -1 ||
+	window.location.href.indexOf("/wireless/switch-and-save/") > -1 ||
+	window.location.href.indexOf("/5g/consumer/") > -1 ||
+	window.location.href.indexOf("/local/colorado/denver") > -1 ||
+	window.location.href.indexOf("/offers/local-wireless/") > -1 ||
+	window.location.href.indexOf("/wireless/byod/") > -1 ||
+	window.location.pathname === "/wireless/") {
+	fbq('init', '321054629174631');
+	fbq.disablePushState = true;
+	fbq('trackSingle', '321054629174631', 'PageView', {
+		loggedIn: loggedIn === 1 ? 'Logged In' : "(not set)",
+		customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+		flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+		language: ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : '',
+		liabilitytype: ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : undefined,
+		friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+	});
+
+	gtag('event', 'conversion', {
+		'send_to': 'AW-602056930/2g0ICJq0hN8BEOLRip8C'
+	});
+}
+
+//AppNexus
+pixie('init', '4744884a-d9b6-4968-84af-f2e434bfe6bd');
+pixie('event', 'PageView', {
+	friendlyPageName: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+	lineOfBusiness: ddo && ddo.getVar("page.pageInfo.lineOfBusiness") ? ddo.getVar("page.pageInfo.lineOfBusiness") : "",
+	language: ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : "",
+	customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+	flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+	liabilityType: ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "",
+});
+
+//Facebook/NS Integration
+fbq('init', '128900881029137');
+fbq.disablePushState = true;
+fbq('trackSingle', '128900881029137', 'PageView', {
+	order_id: attSid
+});
+
+if ((window.location.host === "www.business.att.com" ||
+		window.location.host === "m.business.att.com" ||
+		window.location.host === "www.att.com" ||
+		window.location.host === "m.att.com" ||
+		window.location.host === "atttv.com" ||
+		window.location.href.indexOf("directv.com") > -1)) {
+	if (typeof Invoca !== "undefined") {
+		window.setTimeout(function () {
+			Invoca.PNAPI.run()
+			console.log("Invoca Number Search Fired")
+		}, 1000);
+	}
+}
+
+window.setTimeout(function () {
+	//var mktVariables = JSON.parse(sessionStorage.getItem('mktVariables'));
+	//mktVariables.pageCount++;
+	//if (loggedIn !== mktVariables.loggedIn) {
+	if (loggedIn !== Number(sessionStorage.getItem("mktLogin"))) {
+		if (loggedIn === 0) {
+			authenticationStatus = "LoggedOut";
+			console.log("authenticationStatus " + authenticationStatus);
+			//mktVariables.loggedIn = 0;
+			sessionStorage.setItem("mktLogin", loggedIn);
+		} else if (loggedIn === 1) {
+			authenticationStatus = "LoggedIn";
+			console.log("authenticationStatus " + authenticationStatus);
+			//mktVariables.loggedIn = 1;
+			sessionStorage.setItem("mktLogin", loggedIn);
+		}
+	}
+	//sessionStorage.setItem('mktVariables', JSON.stringify(mktVariables));
+}, 1000);
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Business-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+if ((window.location.href.indexOf("business.att.com") > -1) ||
+	(window.location.href.indexOf("att.com/smallbusiness") > -1) ||
+	(window.location.href.indexOf("/smallbusiness/") > -1) ||
+	(window.location.href.indexOf("digital.att.com") > -1) ||
+	(window.location.href.indexOf("att.com/business") > -1) ||
+	(window.location.href.indexOf("hub.att.com") > -1) ||
+	(window.location.href.indexOf("wireless.att.com") > -1) ||
+	(window.location.href.indexOf("firstnet.com") > -1) ||
+	(window.location.href.indexOf("/DTVAPP/content/directv-for-business-form-completion") > -1) ||
+	(window.location.href.indexOf("cybersecurity.att.com") > -1) ||
+	(window.location.href.indexOf("directvhotels.com") > -1) ||
+	(window.location.href.indexOf("businessdigital.att.com") > -1) ||
+	(window.location.href.indexOf("directv.com/forbusiness") > -1) ||
+	((window.location.href.indexOf("www.att.com") > -1 || window.location.href.indexOf("m.att.com") > -1) &&
+		(pageLiabilityType.indexOf("SMB") > -1 || pageLiabilityType.indexOf("CRU") > -1 || pageCustomerType.indexOf("SMB") > -1 || pageCustomerType.indexOf("CRU") > -1 || accountInFocusUserType.indexOf("SMB") > -1 || accountInFocusUserType.indexOf("CRU") > -1 || userType.indexOf("SMB") > -1 || userType.indexOf("CRU") > -1))) {
+	gtag('event', 'conversion', {
+		'allow_custom_scripts': true,
+		'u1': window.location.hostname + window.location.pathname + window.location.hash,
+		'u20': ddo.getVar("user.uuid").replace("=", ""),
+		'u30': visitor.getMarketingCloudVisitorID(),
+		'u32': ddo && ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : "",
+		'send_to': 'DC-6143919/abssb0/abs_b003+unique'
+	});
+
+	fbq('init', '561815144351253');
+	fbq.disablePushState = true;
+	fbq('trackSingle', '561815144351253', 'PageView', {
+		friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+		lineOfBusiness: ddo && ddo.getVar("page.pageInfo.lineOfBusiness") ? ddo.getVar("page.pageInfo.lineOfBusiness") : "",
+		language: ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : "",
+		customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+		flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+		liabilityType: ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "",
+		productSegment: ddo && ddo.getVar("user.account.productSegment") ? ddo.getVar("user.account.productSegment") : "",
+		slidAssocAccts: ddo && ddo.getVar("user.account.slidAssocAccts") ? ddo.getVar("user.account.slidAssocAccts") : "",
+		productType: ddo && ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : "",
+	});
+
+	pixie('event', 'LandingPage', {
+		item_type: 'ABS',
+		friendlypagename: ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+		lineOfBusiness: ddo && ddo.getVar("page.pageInfo.lineOfBusiness") ? ddo.getVar("page.pageInfo.lineOfBusiness") : "",
+		language: ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : "",
+		customerType: ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+		flowCode: ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+		liabilityType: ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "",
+		productSegment: ddo && ddo.getVar("user.account.productSegment") ? ddo.getVar("user.account.productSegment") : "",
+		slidAssocAccts: ddo && ddo.getVar("user.account.slidAssocAccts") ? ddo.getVar("user.account.slidAssocAccts") : "",
+		productType: ddo && ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : "",
+	});
+}
+
+if (window.location.hostname === "www.att.com" || window.location.hostname === "www.atttv.com" || window.location.hostname === "finalstage.att.com") {
+	var salesforceDataLayer = {
+		"page": {
+			"name": ddo && ddo.getVar("page.pageInfo.pageName") ? ddo.getVar("page.pageInfo.pageName") : "",
+			"domain": window.location.hostname,
+			"path": window.location.pathname,
+			"search": window.location.search,
+			"hash": window.location.search,
+			"path": window.location.pathname,
+			"fullUrl": window.location.hostname + window.location.pathname + window.location.search + window.location.hash,
+			"source": getQueryVariable("source") ? getQueryVariable("source") : "",
+			"extendedSource": getQueryVariable("wtExtndSource") ? getQueryVariable("wtExtndSource") : "",
+			"name": ddo && ddo.getVar("page.pageInfo.pageName") ? ddo.getVar("page.pageInfo.pageName") : "",
+			"friendlyPageName": ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+			"flowCode": ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+			"language": ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : "",
+			"productType": ddo && ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : "",
+			"customerType": ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+			"productSegment": ddo && ddo.getVar("user.account.productSegment") ? ddo.getVar("user.account.productSegment") : "",
+			"liabilityType": ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "",
+		},
+		"user": {
+			//"email": ddo && ddo.getVar("user.attributes.customerBillingEmailAddress") ? ddo.getVar("user.attributes.customerBillingEmailAddress") : "",
+			"uuid": ddo && ddo.getVar("user.uuid") ? ddo.getVar("user.uuid") : "",
+			"mcid": visitor && visitor.getMarketingCloudVisitorID() ? visitor.getMarketingCloudVisitorID() : "",
+		},
+	}
+
+	Krux('ns:attone', 'page:load', function (err) {
+		// Optional, called just after the tags are finished loading.
+		//   If err is not null, then something went wrong. (err will be an instanceof Error or null.)
+	}, {
+		pageView: true // Set to false if you don't want this counted as a page view. 
+	});
+}

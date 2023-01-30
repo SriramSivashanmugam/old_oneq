@@ -1,0 +1,729 @@
+/* attmonetization.config PROD - 203 */
+
+
+
+'use strict';
+var appMonetizationFtrUnitsConfig = {
+  "att.com/my": {
+    "global": {
+      exclusions: ['login', 'forgot', 'fpwd', 'passcode', 'Payment', 'accountOverview'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16992867, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16992870, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16992856, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "myatt_global_unit", title: "Advertisement",
+        sendHitNow: true
+      }],
+    },
+  },
+  "att.com/esupport": {
+    "global": {
+      exclusions: ['smallbusiness', 'smbindex', 'business.htm'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16976426, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16976424, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16976418, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "esupport_global_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/support": {
+    "article": {
+      exclusions: ['smallbusiness', 'smbindex', 'business.htm'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 20986958, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 20986965, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 20986956, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "sup_article_Ad", title: "Advertisement",
+        customAdsIdent: "support_global_unit_midPageAd"
+      },
+      {
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16976831, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16976824, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16976822, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "support_global_unit", title: "Advertisement"
+      }],
+    },
+    "topic": {
+      exclusions: ['smallbusiness', 'smbindex', 'business.htm'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 20922227, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 20922231, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 20922218, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "sup_topic_uvers", title: "Advertisement",
+        customAdsIdent: "support_global_unit_midPageAd"
+      },
+      {
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16976831, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16976824, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16976822, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "support_global_unit", title: "Advertisement"
+      }],
+    },
+    "global": {
+      exclusions: ['smallbusiness', 'smbindex', 'business.htm'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 21858076, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 21858077, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 21858074, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "sup_main_Lander", title: "Advertisement",
+        customAdsIdent: "support_mainPage_unit_Ad",
+        noAdSpacing: true
+      },
+      {
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16976831, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16976824, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16976822, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "support_global_unit", title: "Advertisement",
+      }],
+    },
+  },
+  "att.com/support/ts/wireless": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16977066, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16977064, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16977052, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "troubleshoot_ftr_unit", title: "Advertisement"
+      }],
+    }
+  },
+  "ufix.att.com/portal": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16977104, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16977078, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16977074, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "ufix_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/devicehowto": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16977447, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16977444, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16977443, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "devicehowto_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/deviceunlock": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16977455, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16977452, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16977450, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "deviceunlock_ftr_unit", title: "Advertisement",
+        sendHitNow: true
+      }],
+    },
+  },
+  "att.com/device-support": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 16977469, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 16977468, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 16977466, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "devicesupport_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/checkout/thankyou": {
+    "global": {
+      exclusions: ['cart', 'login'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 20341050, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 20341047, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 20341045, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "checkout_ftr_unit", title: "Advertisement"
+      }],
+    }
+  },
+  "att.com/buy": {
+    "thankyou": {
+      exclusions: ['cart', 'checkout', 'login'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 20341050, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 20341047, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 20341045, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "thankyou_ftr_unit", title: "Advertisement"
+      }],
+    },
+    "global": {
+      exclusions: ['cart', 'checkout', 'login'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381010, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381009, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381008, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "buy_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/plans": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381014, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381012, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381011, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "plans_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/stores": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381040, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381039, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381033, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "stores_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/search": {
+    "global": {
+      exclusions: ['smbsearch'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381044, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381043, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381042, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "glbsearch_ftr_unit", title: "Advertisement",
+        delyedLoading: true
+      }],
+    },
+  },
+  "att.com/features": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381055, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381054, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381045, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "features_ftr_unit", title: "Advertisement",
+        delyedLoading: true
+      }],
+    },
+  },
+  "att.com/prepaid": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504377, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504391, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504364, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "prepaid_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/tv": {
+    "global": {
+      exclusions: ['supersaturdaynight'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504376, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504390, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504363, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "tv_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "attonlineoffers.com": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381058, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381057, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381056, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "onlineoffers_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/acctmgmt": {
+    "makepayment": {
+      exclusions: ['login', 'forgot', 'fpwd', 'passcode', 'accountOverview', '/fid'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 21751376, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 21751377, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 21751374, customProps: { sizes: [[728, 90], [970, 90]], }, },
+        ],
+        targetId: "payment_confirmation_unit_ad", title: "Advertisement",
+		    customAdsIdent:"payment_mainPage_unit_Ad"
+      },
+	    {
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+	    	tags: [
+          { breakpoint: 768, tagId: 13921447, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 13921448, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 13921446, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "payment_ftr_unit", title: "Advertisement"
+      }],
+    },
+    "billandpay": {
+      exclusions: ['login', 'forgot', 'fpwd', 'passcode', 'accountOverview', '/fid'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 22250799, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 22250801, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 22250798, customProps: { sizes: [[728, 90], [970, 90]], }, },
+        ],
+        targetId: "billPay_ftr_unit", title: "Advertisement",
+        customAdsIdent: "billPay_mainPage_unit_Ad"
+      },
+      {
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381006, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381005, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381004, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "acctmgmt_ftr_unit", title: "Advertisement"
+      }
+      ],
+    },
+    "global": {
+      exclusions: ['login', 'forgot', 'fpwd', 'passcode', 'makepayment', 'Payment', 'accountOverview', '/fid'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381006, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381005, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381004, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "acctmgmt_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/olam": {
+    "global": {
+      exclusions: ['login', 'forgot', 'fpwd', 'passcode', 'Payment', 'accountOverview'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17592336, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17592340, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17565006, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "olam_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/directv": {
+    "directvbundles": {
+      exclusions: ['cart', 'checkout', 'login', 'thankyou'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504375, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504389, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504362, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "directvbundles_ftr_unit", title: "Advertisement",
+        customAdsIdent: "37932404571673123884267659157321834057"
+      }],
+    },
+    "global": {
+      exclusions: ['cart', 'checkout', 'login', 'thankyou'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504375, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504389, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504362, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "direct_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "directv.com": {
+    "global": {
+      exclusions: ['cart', 'checkout', 'login', 'thankyou'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17591877, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17591889, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17565002, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "direct_ftr_unit", title: "Advertisement",
+        customAdsIdent: "global_ftr_monetization"
+      }],
+    },
+  },
+  "att.com/att/attthanks": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381064, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381063, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381062, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "thanks_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/checkmyorder": {
+    "global": {
+      exclusions: ['login'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17749748, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17749749, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17749745, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "checkmyorder_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/offers": {
+    "global": {
+      exclusions: ['international.html'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 17381028, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 17381027, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 17381025, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "offers_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/deals/": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504374, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504388, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504361, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "deals_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/wireless/": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 13921444, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 13921445, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 13921443, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "wireless_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/internet/": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504373, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504386, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504360, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "internet_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/accessories/": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504380, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504394, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504367, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "accessories_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/bundles/": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504378, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504392, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504365, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "bundles_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "att.com/wi-fi/": {
+    "global": {
+      exclusions: ['page1'],
+      sponsoredAds: 0,
+      apntagconfig: [{
+        memberId: 9367,
+        debug: false,
+        enableAd: true,
+        adRefreshEnabled: true,
+        tags: [
+          { breakpoint: 768, tagId: 14504385, customProps: { sizes: [[728, 90]], }, },
+          { breakpoint: 414, tagId: 14504399, customProps: { sizes: [[320, 50], [300, 50]], }, },
+          { breakpoint: 1024, tagId: 14504372, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+        ],
+        targetId: "wi-fi_ftr_unit", title: "Advertisement"
+      }],
+    },
+  },
+  "sponsoredAds": [
+    {
+      tags: [
+        { breakpoint: 768, tagId: 13921444, customProps: { sizes: [[728, 90]], }, },
+        { breakpoint: 414, tagId: 13921442, customProps: { sizes: [[320, 50], [300, 50]], }, },
+        { breakpoint: 1024, tagId: 13921443, customProps: { sizes: [[728, 90], [970, 90], [970, 250]], }, },
+      ],
+    }
+  ],
+  "gnFtrIdent": "gn-zone5",
+  "glbFtrIdent": "attmonetization_ftr_unit",
+  "legacyFtrIdent": "ge5p_z7",
+  "baseAdsHost": "https://www.att.com/scripts/adobe/prod/attmonetization/js/"
+}

@@ -1,0 +1,42 @@
+/* Marketing Rules version: 1871 */
+//Rule: SalesForce_Universal
+//Owner: ml916s
+
+var salesforceDataLayer = {
+    "page": {
+        "name": ddo && ddo.getVar("page.pageInfo.pageName") ? ddo.getVar("page.pageInfo.pageName") : "",
+        "domain": window.location.hostname,
+        "path": window.location.pathname,
+        "search": window.location.search,
+        "hash": window.location.search,
+        "path": window.location.pathname,
+        "fullUrl": window.location.hostname + window.location.pathname + window.location.search + window.location.hash,
+        "source": getQueryVariable("source") ? getQueryVariable("source") : "",
+        "extendedSource": getQueryVariable("wtExtndSource") ? getQueryVariable("wtExtndSource") : "",
+        "name": ddo && ddo.getVar("page.pageInfo.pageName") ? ddo.getVar("page.pageInfo.pageName") : "",
+        "friendlyPageName": ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+        "flowCode": ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+        "language": ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : "",
+        "productType": ddo && ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : "",
+        "customerType": ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+        "productSegment": ddo && ddo.getVar("user.account.productSegment") ? ddo.getVar("user.account.productSegment") : "",
+        "liabilityType": ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "",
+    },
+    "user": {
+        //"email": ddo && ddo.getVar("user.attributes.customerBillingEmailAddress") ? ddo.getVar("user.attributes.customerBillingEmailAddress") : "",
+        "uuid": ddo && ddo.getVar("user.uuid") ? ddo.getVar("user.uuid") : "",
+        "mcid": visitor && visitor.getMarketingCloudVisitorID() ? visitor.getMarketingCloudVisitorID() : "",
+    },
+}
+
+window.Krux || ((Krux = function () {
+    Krux.q.push(arguments)
+}).q = []);
+(function () {
+    var k = document.createElement('script');
+    k.type = 'text/javascript';
+    k.async = true;
+    k.src = (location.protocol === 'https:' ? 'https:' : 'http:') + '//cdn.krxd.net/controltag/vtn9okxvt.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(k, s);
+}());

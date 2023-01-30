@@ -1,0 +1,43 @@
+var ft_onetag_13503 = {
+    ft_vars: {
+        "friendlypagename": ddo && ddo.getVar("page.pageInfo.friendlyPageName") ? ddo.getVar("page.pageInfo.friendlyPageName") : "",
+        "lineOfBusiness": ddo && ddo.getVar("page.pageInfo.lineOfBusiness") ? ddo.getVar("page.pageInfo.lineOfBusiness") : "",
+        "language": ddo && ddo.getVar("page.pageInfo.language") ? ddo.getVar("page.pageInfo.language") : "",
+        "customerType": ddo && ddo.getVar("user.customerType") ? ddo.getVar("user.customerType") : "",
+        "flowCode": ddo && ddo.getVar("page.pageInfo.flowCode") ? ddo.getVar("page.pageInfo.flowCode") : "",
+        "liabilityType": ddo && ddo.getVar("user.account.liabilityType") ? ddo.getVar("user.account.liabilityType") : "",
+        "productSegment": ddo && ddo.getVar("user.account.productSegment") ? ddo.getVar("user.account.productSegment") : "",
+        "slidAssocAccts": ddo && ddo.getVar("user.account.slidAssocAccts") ? ddo.getVar("user.account.slidAssocAccts") : "",
+        "productType": ddo && ddo.getVar("page.attributes.productType") ? ddo.getVar("page.attributes.productType") : "",
+    },
+    ot_dom:'https://servedby.flashtalking.com',
+    ot_path:'/container/19536;124481;13503;iframe/?',
+    ot_href:'ft_referrer='+escape(document.location.href),
+    ot_rand:Math.random()*1000000,
+    ot_ref:document.referrer,
+    ot_init:function(){
+        var o=this,qs='',count=0,ns='';
+        for(var key in o.ft_vars){
+            qs+=(o.ft_vars[key]==''?'':key+'='+o.ft_vars[key]+'&');
+        }
+        count=o.ot_path.length+qs.length+o.ot_href+escape(o.ot_ref).length;
+        ns=o.ot_ns(count-2000);
+        var ifrm = document.createElement('iframe');
+          ifrm.style.cssText = 'width:1px;height:1px;position:absolute;display:none;';
+          ifrm.src = o.ot_dom + o.ot_path + qs + o.ot_href + '&ns=' + ns + '&cb=' + o.ot_rand;
+          document.body.appendChild(ifrm);
+    },
+    ot_ns:function(diff){
+        if(diff>0){
+            var o=this,qo={},
+                sp=/(?:^|&)([^&=]*)=?([^&]*)/g,
+                fp=/^(http[s]?):\/\/?([^:\/\s]+)\/([\w\.]+[^#?\s]+)(.*)?/.exec(o.ot_ref),
+                ro={h:fp[2],p:fp[3],qs:fp[4].replace(sp,function(p1,p2,p3){if(p2)qo[p2]=[p3]})};
+            return escape(ro.h+ro.p.substring(0,10)+(qo.q?'?q='+unescape(qo.q):'?p='+unescape(qo.p)));
+        }else{
+            var o=this;
+            return escape(unescape(o.ot_ref));
+        }
+            }
+    }
+ft_onetag_13503.ot_init();
